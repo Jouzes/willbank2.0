@@ -3,6 +3,7 @@
 #include "Conta.hpp"
 #include "Titular.hpp"
 #include "Cpf.hpp"
+#include "Funcionario.hpp"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ int main()
 
     ExibeSaldo(umaConta);
 
-    Titular outro(Cpf("098.765.432-10"), "Dias");
+    Titular outro(Cpf("098.765.432-10"), "Vinicius Dias");
     Conta umaOutraConta("654321", titular);
     umaOutraConta.depositar(300);
     umaOutraConta.sacar(50);
@@ -29,6 +30,10 @@ int main()
     ExibeSaldo(umaOutraConta);
 
     cout << "Número de contas: " << Conta::recuperaNumeroDeContas() << endl;
+
+    Funcionario funcionario(Cpf("123.456.789-10"), "Dias Vinicius", 1000);
+    
+    cout << "Nome do funcionário: " << funcionario.recuperaNome() << endl;
 
     return 0;
 }
